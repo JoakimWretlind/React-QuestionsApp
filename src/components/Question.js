@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { gsap } from 'gsap'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import {
     Questions,
@@ -11,9 +12,18 @@ import {
 const Question = ({ title, info }) => {
     const [showInfo, setShowInfo] = useState(false);
 
+    useEffect(() => {
+        gsap.to(".questions", {
+            delay: .3,
+            opacity: 1,
+            stagger: .3,
+            rotationX: 360,
+        })
+    }, [])
+
     return (
         <>
-            <Questions>
+            <Questions className="questions">
                 <QuestionHeader>
                     <QuestionHeaderH4>{title}</QuestionHeaderH4>
                     <Btn className="btn" onClick={() => setShowInfo(!showInfo)}>
@@ -22,8 +32,10 @@ const Question = ({ title, info }) => {
                 </QuestionHeader>
                 {showInfo && <QuestionP>{info}</QuestionP>}
             </Questions>
+
         </>
     )
+
 }
 
 export default Question

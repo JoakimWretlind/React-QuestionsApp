@@ -57,6 +57,7 @@ export const QuestionHeaderH4 = styled.h4`
 `;
 
 export const Questions = styled.div`
+  opacity: 0;
   padding: 1rem 1.5rem;
   background: #ECECEC;
   margin-bottom: 1rem;

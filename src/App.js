@@ -14,7 +14,7 @@ function App() {
       <GlobalStyle />
       <Main>
         <Container>
-          <ContainerH3>questions and answers about login</ContainerH3>
+          <ContainerH3>questions and answers about JavaScript</ContainerH3>
           <section>
             {
               data.map(question => {
